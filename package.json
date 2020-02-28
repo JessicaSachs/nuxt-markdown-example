@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-markdown",
+  "version": "1.0.0",
+  "description": "My sweet Nuxt.js project",
+  "author": "Jess",
+  "private": true,
+  "scripts": {
+    "dev": "npm run styleguidist && nuxt",
+    "build": "npm run styleguidist && nuxt build",
+    "start": "npm run styleguidist && nuxt start",
+    "generate": "npm run styleguidist && nuxt generate",
+    "styleguidist": "vue-docgen your-app/components/**/*.vue dist/docs"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/markdownit": "^1.2.7",
+    "nuxt": "^2.0.0",
+    "vue-docgen-cli": "^4.8.1",
+    "vue-live": "^1.5.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
