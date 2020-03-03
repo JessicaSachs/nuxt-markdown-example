@@ -5,10 +5,11 @@
   "author": "Jess",
   "private": true,
   "scripts": {
-    "dev": "npm run styleguidist && nuxt",
-    "build": "npm run styleguidist && nuxt build",
-    "start": "npm run styleguidist && nuxt start",
-    "generate": "npm run styleguidist && nuxt generate",
+    "dev": "npm run watch-styleguidist && nuxt",
+    "build": "npm run watch-styleguidist && nuxt build",
+    "start": "npm run watch-styleguidist && nuxt start",
+    "generate": "npm run watch-styleguidist && nuxt generate",
+    "watch-styleguidist": "watch 'npm run styleguidist' ./your-app &",
     "styleguidist": "vue-docgen your-app/components/**/*.vue dist/docs"
   },
   "dependencies": {
@@ -19,6 +20,8 @@
     "vue-live": "^1.5.1"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.0.0"
+    "@nuxtjs/vuetify": "^1.0.0",
+    "watch": "^1.0.2",
+    "glob": "latest"
   }
 }

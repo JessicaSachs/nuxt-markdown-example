@@ -41,6 +41,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello:hover { color: orange; }
+
 h3 {
   margin: 40px 0 0;
 }
@@ -58,8 +60,28 @@ a {
 </style>
 
 <docs>
+  Here's some content blah
+
+  <div>
+
+    ```jsx
+    <div>{{ 1 + 1 }}</div>
+    ```
+
+  </div>
+
+
   ```vue
-  <template><HelloWorld/></template>
-  <script>export default{}</script>
+  <template>
+    <div>
+      <HelloWorld class="merp" msg="All my base are belong to us"></HelloWorld>
+
+      <SomethingElse/>
+    </div>
+  </template>
+  <script>
+    export default { data() { return { msg: 'merp'}}}
+  </script>
   ```
+
 </docs>

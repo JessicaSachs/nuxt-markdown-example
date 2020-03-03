@@ -89,7 +89,23 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters({
+      components: 'components/components'
+    })
+  },
+  async created() {
+    for (const entry of Object.entries(this.components)) {
+      const [_, module] = entry
+      Vue.component(
+        module.names.title,
+        () => import('../your-app/' + module.componentFile.replace('./your-app/', '')))
+    }
+  },
   data () {
     return {
       clipped: false,
