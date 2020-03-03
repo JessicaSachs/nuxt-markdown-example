@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import MarkdownRenderer from "../../components/MarkdownRenderer";
+  import MarkdownRenderer from "../../../components/MarkdownRenderer";
   import { VueLive } from "vue-live";
   import { mapGetters } from 'vuex'
 
@@ -65,8 +65,8 @@
     async created() {
       const component = this.component(this.$router)
       if (component) {
-        this.componentMarkdownModule = await import('../../dist/docs/' + component.docFile.replace('./dist/docs/', ''))
-        this.componentModule = await import('../../your-app/' + component.componentFile.replace('./your-app/', ''))
+        this.componentMarkdownModule = await import('../../../dist/docs/' + component.docFile.replace('./dist/docs/', ''))
+        this.componentModule = await import('../../../your-app/' + component.componentFile.replace('./your-app/', ''))
       }
 
     },

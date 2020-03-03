@@ -1,7 +1,15 @@
 <template>
   <div>
     <h1>I am the parent view</h1>
-    <nuxt-child/>
+    <ul>
+      <li v-for="component in components"
+          :key="component.names.kebab"
+      >
+        <nuxt-link :to="component.path">{{ component.names.title }}</nuxt-link>
+      </li>
+    </ul>
+    <nuxt-link to="/docs/hello-world">Click me</nuxt-link>
+    <nuxt-child :key="$route.fullPath"/>
   </div>
 </template>
 

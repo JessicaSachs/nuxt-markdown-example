@@ -12,9 +12,10 @@
         // if node doesn't need to be hydrated, just render it out
         // else, wrap it in a VueLive component and pass the right code to it with the right imports
 
-        const hasCode = wrapper => wrapper.getElementsByClassName('language-vue').length ||
-          wrapper.getElementsByClassName('language-jsx').length
-        const isCode = wrapper => wrapper.tagName === 'code' || wrapper.tagName === 'CODE'
+        const hasCode = n => n.getElementsByClassName('language-vue').length ||
+          n.getElementsByClassName('language-jsx').length
+        const isCode = n => n.tagName === 'code' || n.tagName === 'CODE'
+        const language = n => n.className.split('language-').pop()
 
         if (isCode(node)) {
           return h(VueLive, {
