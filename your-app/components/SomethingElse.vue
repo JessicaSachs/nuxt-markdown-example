@@ -1,16 +1,14 @@
 <template>
-  <div>Hello from the SomethingElse</div>
+  <h1>Hello from something else</h1>
 </template>
 
 <script>
   export default {}
 </script>
-
-<style scoped lang="scss">
-</style>
-
 <docs>
+  Something else!
   ```jsx
-  <SomethingElse></SomethingElse>
+  <something-else/>
   ```
+
 </docs>

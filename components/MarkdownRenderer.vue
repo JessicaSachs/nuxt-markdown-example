@@ -1,10 +1,17 @@
 
 <script>
   import { VueLive } from "vue-live";
+
   export default {
     props: {
       content: { type: String, required: false },
-      components: { type: Object, required: false }
+      components: { type: Object, required: false },
+      component: { type: Object, required: false },
+      layout: {},
+      showCode: { type: Boolean, required: false, default: true }
+    },
+    data() {
+      return { }
     },
     methods: {
       renderCode(node, h) {
@@ -15,16 +22,17 @@
         const hasCode = n => n.getElementsByClassName('language-vue').length ||
           n.getElementsByClassName('language-jsx').length
         const isCode = n => n.tagName === 'code' || n.tagName === 'CODE'
-        const language = n => n.className.split('language-').pop()
 
         if (isCode(node)) {
           return h(VueLive, {
             domProps: {
-              className: 'code-example'
+              className: ['code-example'].concat(this.showCode ? ['show-code'] : ['hide-code']).join(' ')
             },
             props: {
               code: node.innerText,
-              components: this.components
+              components: this.components,
+              layout: this.layout,
+              layoutProps: { component: this.component },
             }
           });
         }
@@ -48,8 +56,14 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
   .code-example {
     color: black;
+
+    &.hide-code {
+      .editor-wrapper {
+        display: none;
+      }
+    }
   }
 </style>

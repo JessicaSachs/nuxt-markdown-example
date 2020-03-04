@@ -60,28 +60,34 @@ a {
 </style>
 
 <docs>
-  Here's some content blah
 
-  <div>
+  ## Hello world
+  Before the JSX
 
-    ```jsx
-    <div>{{ 1 + 1 }}</div>
-    ```
+  ```jsx
+  <div>{{ '1' + 'hello' }}</div>
+  ```
 
-  </div>
-
-
+  Some text before the component
   ```vue
   <template>
     <div>
-      <HelloWorld class="merp" msg="All my base are belong to us"></HelloWorld>
-
-      <SomethingElse/>
+      <HelloWorld :msg="message"/>
+      <something-else/>
     </div>
+
   </template>
+
   <script>
-    export default { data() { return { msg: 'merp'}}}
+    export default {
+      data() {
+        return {
+          message: 'Something'
+        }
+      }
+    }
   </script>
   ```
 
+  Some text after the components
 </docs>

@@ -26,7 +26,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/prism-ghcolors.css'
+    '~/assets/prism-ghcolors.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -92,6 +92,7 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: [/^vuetify/],
     /*
     ** You can extend webpack config here
     */

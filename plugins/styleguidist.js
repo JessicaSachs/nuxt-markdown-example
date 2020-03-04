@@ -4,6 +4,7 @@ export default ({ store }, inject) => {
   if (process.server) {
     function getComponents() {
       const glob = require('glob')
+      const path = require('path')
       const outputPrefix = './dist/docs/your-app'
       const sourcePrefix = './your-app'
       const contentDocs = glob.sync(`${outputPrefix}/**/*.md`)
@@ -14,8 +15,6 @@ export default ({ store }, inject) => {
 
       for (const doc of contentDocs) {
         const name = normalizeName(doc, outputPrefix)
-        console.log('doc', name)
-
         map[name] = map[name] || {}
         map[name].docFile = doc
       }
@@ -52,6 +51,7 @@ export default ({ store }, inject) => {
         const pathName = parts.pop().replace(title, kebab)
 
         map[key].path = parts.slice(0, parts.length - 2).concat(pathName).join('/')
+        map[key].markdown = require('../dist/docs' + map[key].docFile.replace('./dist/docs', '')).default
       }
 
       return map

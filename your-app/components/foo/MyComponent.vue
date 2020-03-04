@@ -9,6 +9,10 @@
 <script>
   export default {
     props: {
+      /**
+       * A message is a way of communicating with everyone around you.
+       * It can be short, long, or nonexistent
+       */
       message: { type: String, default: "yeah, what's up fam?" }
     }
   }

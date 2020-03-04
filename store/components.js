@@ -32,7 +32,6 @@ export const getters = {
       for (const component of Object.values(state.components)) {
         if (component.path === getters.componentNameFromPath(router)) { return component }
       }
-      return { docFile: 'foo' }
     }
   }
 }
