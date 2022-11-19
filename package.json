@@ -16,7 +16,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/markdownit": "^1.2.7",
     "html-to-vdom": "^0.7.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "virtual-dom": "^2.1.1",
     "vue-docgen-cli": "^4.8.1",
     "vue-live": "^1.5.1",
